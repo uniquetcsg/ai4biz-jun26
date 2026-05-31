@@ -1,40 +1,45 @@
-## Objetivo
+## 1. Reverter paleta para a oficial (Inteli Exec)
 
-Atualizar o visual de todas as páginas para um padrão mais moderno e bold, inspirado no input anexado (campo roxo grande com botão amarelo, cantos 100% retos), mantendo a paleta Inteli já configurada (roxo `#2e2640`, coral, verde, amarelo como accent novo, cinzas).
+Manter o redesign recente (cantos retos `--radius: 0`, elementos largos, tipografia grande, Platypi/Manrope, blocos roxos), mas restaurar as cores oficiais:
 
-## Mudanças de design tokens (`src/styles.css`)
+Em `src/styles.css`:
+- Remover `--c-amarelo` e o accent amarelo introduzido na última iteração.
+- Adicionar tokens ausentes: `--c-lilas: #90a5e5`, `--c-verde: #89cea5`. Corrigir `--c-cinza-esc` para `#b2b6bf` (estava `#6b6f78`).
+- `--accent: #ff4545` (coral) — acento institucional.
+- Adicionar `--segment: #066d73` + `--segment-foreground: #ffffff` como token novo para o acento do segmento Exec & Pós/MBA.
+- `--border` e `--input` voltam para `#caced6` (cinza médio) — o roxo como borda foi exagero da iteração anterior.
+- `--ring: #066d73`.
+- `--muted-foreground: #6b6f78` (texto auxiliar — mais legível que o cinza claro do DS).
 
-- `--radius: 0` → todos os componentes ganham cantos retos (sem `rounded-*`).
-- Adicionar `--c-amarelo: #e8ff3a` (amarelo do botão de check da referência) e mapear como novo `--accent` / `--accent-foreground: #2e2640`.
-- Reforçar `--primary: #2e2640` (roxo profundo) como cor dominante de superfícies de destaque (cards de módulo, inputs).
-- Aumentar escala tipográfica base e pesos (headings mais grossos via Platypi 700+).
+Em `@theme inline` adicionar `--color-segment` e `--color-segment-foreground`.
 
-## Mudanças por página
+## 2. Ajustar usos de cor nas páginas
 
-Padrão visual aplicado em todas:
-- Container mais largo (`max-w-5xl` no lugar de `max-w-3xl`).
-- Sem bordas arredondadas em nenhum elemento (cards, botões, inputs, badges, chips).
-- Inputs e botões altos (h-14/h-16), texto grande, sem borda — fundo roxo com texto branco; ações primárias em bloco amarelo ao lado (estilo da referência).
-- Headers maiores, com título grande em Platypi.
+Trocar onde estava amarelo (`bg-accent`/`text-accent` no papel de "botão de ação grande") para o padrão correto:
+- Botões de ação primária ficam em `bg-primary text-primary-foreground` (roxo).
+- Acento coral (`bg-accent`) usado com parcimônia: ícone do logo (no header), badge de contagem, hover de foco.
+- Cabeçalhos de card em `bg-segment` (verde escuro) onde fizer sentido, conforme DS Exec.
 
-### `src/routes/index.tsx` (Visão Aluno)
-- Header maior; cards de tópicos como blocos largos roxos com título branco grande e badge amarelo de contagem.
-- Lista de materiais em linhas grandes, divisores retos, ícones maiores.
+Páginas afetadas: `src/routes/index.tsx`, `login.tsx`, `admin.tsx`, `admin.modulos.novo.tsx`, `admin.materiais.tsx`. Manter estrutura/tamanhos/retidão dos cantos.
 
-### `src/routes/login.tsx`
-- Form em bloco único: inputs grandes roxos + botão "Entrar" amarelo grande à direita (espelhando a referência).
+## 3. Salvar o design system como referência oficial
 
-### `src/routes/admin.tsx`
-- Botões de ação grandes e retos (primário roxo, secundário com borda).
-- Lista de módulos em blocos largos com ações maiores.
+- Copiar `user-uploads://inteli-exec-design-system.md` para `docs/design-system.md` no projeto (referência viva).
+- Criar memória em `mem://design/inteli-exec` com resumo das regras (paleta oficial, tipografia, regra 60-30-10, sem amarelo) e registrar em `mem://index.md` em Core: "Paleta oficial Inteli Exec (roxo/coral/verde-escuro). Nunca usar amarelo. Cantos retos. Fontes Platypi+Manrope. Doc: docs/design-system.md".
 
-### `src/routes/admin.modulos.novo.tsx`
-- Inputs grandes roxos, botão amarelo grande de "Criar Módulo".
+## 4. Menu de navegação Início / Sobre
 
-### `src/routes/admin.materiais.tsx`
-- Selects e área de upload em blocos retos grandes; botão final amarelo full-width.
+- Criar componente `src/components/site-header.tsx` com:
+  - Bloco roxo à esquerda contendo ícone `BookOpen` + título "Plataforma de Cursos".
+  - Nav à direita com `<Link to="/">Início</Link>` e `<Link to="/sobre">Sobre</Link>`, usando `activeProps` para destacar a rota ativa (sublinhado coral / texto roxo bold).
+  - Estética coerente com o redesign: cantos retos, items grandes, uppercase Manrope 700.
+- Renderizar `<SiteHeader />` no `__root.tsx` acima do `<Outlet />`.
+- Remover o header inline duplicado de cada página (`index.tsx`, `login.tsx`, `admin.tsx`, `admin.modulos.novo.tsx`, `admin.materiais.tsx`) — o header global passa a ser único. Mantenho um subtítulo/h1 contextual por página.
+- Criar rota nova `src/routes/sobre.tsx` com:
+  - `head()` próprio (title, description, og).
+  - Layout placeholder grande indicando "Sobre o autor" com mensagem "Conteúdo em breve — informações enviadas pelo autor serão exibidas aqui." Sem dados inventados (o usuário enviará depois).
 
 ## Fora de escopo
 
-- Sem mudanças de conteúdo, rotas ou lógica.
-- Sem novos componentes/bibliotecas — só Tailwind + tokens.
+- Sem mudança de conteúdo dos módulos/materiais.
+- Sem leitura/integração do PDF do Guia do Programa (não solicitado para incorporação agora).
