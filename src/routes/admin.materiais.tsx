@@ -72,7 +72,7 @@ function MateriaisPage() {
             <div className="flex flex-col gap-1.5">
               <label className="text-sm font-medium text-foreground">Tipo de Material *</label>
               <div className="relative">
-                <ActiveIcon className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-accent-foreground" />
+                <ActiveIcon className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-accent" />
                 <select
                   value={tipo}
                   onChange={(e) => setTipo(e.target.value as typeof tipo)}
@@ -103,7 +103,7 @@ function MateriaisPage() {
 
             <button
               type="submit"
-              className="mt-1 w-full rounded-md bg-muted-foreground/70 px-4 py-2.5 text-sm font-medium text-background hover:opacity-90"
+              className="mt-1 w-full rounded-md bg-accent px-4 py-2.5 text-sm font-medium text-accent-foreground hover:opacity-90"
             >
               Adicionar Materiais
             </button>
