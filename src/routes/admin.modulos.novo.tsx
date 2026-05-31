@@ -68,7 +68,7 @@ function NovoModuloPage() {
 
             <button
               type="submit"
-              className="mt-2 w-full rounded-md bg-foreground px-4 py-2.5 text-sm font-medium text-background hover:opacity-90"
+              className="mt-2 w-full rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground hover:opacity-90"
             >
               Criar Módulo
             </button>

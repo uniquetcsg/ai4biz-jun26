@@ -101,7 +101,7 @@ function Index() {
                             className="flex items-center justify-between gap-3 rounded-md px-2 py-2.5 hover:bg-muted/50"
                           >
                             <div className="flex items-center gap-3">
-                              <Icon className="h-4 w-4 text-accent-foreground" />
+                              <Icon className="h-4 w-4 text-accent" />
                               <span className="text-sm text-foreground">{mat.title}</span>
                             </div>
                             <span className="text-xs text-muted-foreground">{typeLabel[mat.type]}</span>

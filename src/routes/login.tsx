@@ -64,7 +64,7 @@ function LoginPage() {
 
           <button
             type="submit"
-            className="mt-2 w-full rounded-md bg-foreground px-4 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
+            className="mt-2 w-full rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
           >
             Entrar
           </button>
