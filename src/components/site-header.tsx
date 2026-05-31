@@ -29,7 +29,7 @@ export function SiteHeader() {
             inactiveProps={{ className: "text-foreground hover:bg-muted" }}
             className="flex items-center px-5 text-sm font-bold uppercase tracking-wide"
           >
-            Sobre
+            SOBRE
           </Link>
         </nav>
       </div>

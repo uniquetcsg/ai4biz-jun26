@@ -19,8 +19,8 @@ function SobrePage() {
       <SiteHeader />
       <div className="mx-auto max-w-5xl px-6 py-16">
         <div className="mb-12">
-          <p className="mb-3 text-sm font-bold uppercase tracking-widest text-accent">Sobre</p>
-          <h1 className="text-4xl font-bold text-foreground md:text-5xl">Sobre o autor</h1>
+          <p className="mb-3 text-sm font-bold uppercase tracking-widest text-accent">SOBRE</p>
+          <h1 className="text-4xl font-bold text-foreground md:text-5xl">SAIBA MAIS</h1>
         </div>
 
         <div className="border-2 border-primary bg-card">
