@@ -1,5 +1,4 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { BookOpen } from "lucide-react";
 import { useState } from "react";
 
 export const Route = createFileRoute("/admin/modulos/novo")({
@@ -22,15 +21,11 @@ function NovoModuloPage() {
   return (
     <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-5xl px-6 py-16">
-        <header className="mb-12 flex items-center gap-5">
-          <div className="flex h-16 w-16 items-center justify-center bg-primary">
-            <BookOpen className="h-8 w-8 text-accent" />
-          </div>
-          <div>
-            <h1 className="text-4xl font-bold text-foreground md:text-5xl">Criar Tópico</h1>
-            <p className="mt-1 text-base text-muted-foreground">Adicione um novo tópico ao curso</p>
-          </div>
-        </header>
+        <div className="mb-12">
+          <p className="mb-3 text-sm font-bold uppercase tracking-widest text-accent">Admin</p>
+          <h1 className="text-4xl font-bold text-foreground md:text-5xl">Criar Tópico</h1>
+          <p className="mt-2 text-base text-muted-foreground">Adicione um novo tópico ao curso</p>
+        </div>
 
         <form
           onSubmit={(e) => {
@@ -56,7 +51,7 @@ function NovoModuloPage() {
           />
           <button
             type="submit"
-            className="h-16 w-full bg-accent px-6 text-lg font-bold uppercase tracking-wide text-accent-foreground hover:opacity-90"
+            className="h-16 w-full bg-segment px-6 text-lg font-bold uppercase tracking-wide text-segment-foreground hover:opacity-90"
           >
             Criar Tópico
           </button>
