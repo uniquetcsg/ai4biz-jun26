@@ -60,7 +60,7 @@ function Index() {
       <div className="mx-auto max-w-3xl px-6 py-12">
         <header className="mb-8 flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent">
-            <BookOpen className="h-5 w-5 text-primary" />
+            <BookOpen className="h-5 w-5 text-accent-foreground" />
           </div>
           <div>
             <h1 className="text-xl font-semibold text-foreground">Plataforma de Cursos</h1>
@@ -101,7 +101,7 @@ function Index() {
                             className="flex items-center justify-between gap-3 rounded-md px-2 py-2.5 hover:bg-muted/50"
                           >
                             <div className="flex items-center gap-3">
-                              <Icon className="h-4 w-4 text-primary" />
+                              <Icon className="h-4 w-4 text-accent-foreground" />
                               <span className="text-sm text-foreground">{mat.title}</span>
                             </div>
                             <span className="text-xs text-muted-foreground">{typeLabel[mat.type]}</span>

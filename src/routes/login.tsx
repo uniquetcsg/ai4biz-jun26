@@ -24,7 +24,7 @@ function LoginPage() {
       <div className="w-full max-w-md rounded-xl border border-border bg-card p-8 shadow-sm">
         <div className="mb-6 flex flex-col items-center text-center">
           <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-accent">
-            <BookOpen className="h-6 w-6 text-primary" />
+            <BookOpen className="h-6 w-6 text-accent-foreground" />
           </div>
           <h1 className="text-xl font-semibold text-foreground">Login Admin</h1>
           <p className="mt-1 text-sm text-muted-foreground">

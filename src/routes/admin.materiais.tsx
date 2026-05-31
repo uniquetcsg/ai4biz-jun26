@@ -32,7 +32,7 @@ function MateriaisPage() {
       <div className="mx-auto max-w-3xl px-6 py-12">
         <header className="mb-8 flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent">
-            <BookOpen className="h-5 w-5 text-primary" />
+            <BookOpen className="h-5 w-5 text-accent-foreground" />
           </div>
           <div>
             <h1 className="text-xl font-semibold text-foreground">Painel Admin</h1>
@@ -72,7 +72,7 @@ function MateriaisPage() {
             <div className="flex flex-col gap-1.5">
               <label className="text-sm font-medium text-foreground">Tipo de Material *</label>
               <div className="relative">
-                <ActiveIcon className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-primary" />
+                <ActiveIcon className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-accent-foreground" />
                 <select
                   value={tipo}
                   onChange={(e) => setTipo(e.target.value as typeof tipo)}
@@ -92,7 +92,7 @@ function MateriaisPage() {
               <label className="text-sm font-medium text-foreground">Arquivos *</label>
               <div className="flex flex-col items-center justify-center gap-3 rounded-lg border-2 border-dashed border-border bg-background/50 px-6 py-12">
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent">
-                  <ActiveIcon className="h-6 w-6 text-primary" />
+                  <ActiveIcon className="h-6 w-6 text-accent-foreground" />
                 </div>
                 <p className="text-sm font-medium text-foreground">Arraste e solte arquivos aqui</p>
                 <p className="text-xs text-muted-foreground">
